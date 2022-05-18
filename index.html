@@ -14,8 +14,8 @@
           <img src="./img/instagram_logo.png" />
         </div>
         <div class="login">
-          <input type="text" id="userId" placeholder="공주 이름" required />
-          <input type="password" id="userPwd" placeholder="우리 1일 (1월1일 → 0101 입력)" required />
+          <input type="text" id="userID" placeholder="공주 이름 (성 빼고 입력)" required />
+          <input type="password" id="userPW" placeholder="우리 1일 (1월1일 → 0101 입력)" required />
           <button type="button" id="loginBtn">로그인</button>
         </div>
         <div class="boundary">
@@ -23,11 +23,21 @@
           <div class="boundary__text"><p>또는</p></div>
           <div class="boundary__bar"></div>
         </div>
-        <div class="remember">
-          <a href="#">비밀번호를 잊으셨나요?</a>
+        <div class="rememberWrap">
+          <p id="remember" href="#">비밀번호를 잊으셨나요?</p>
         </div>
         <div class="signUp"></div>
       </div>
+
+      <div id="forgetWrap" class="hidden">
+        <p>지금 잊었다는거야?</p>
+        <div class="forget__btn">
+          <button id="forgetYes">응 까먹었어</button>
+          <button id="forgetNo">아니야</button>
+        </div>
+      </div>
     </div>
+    <script src="./js/remember.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

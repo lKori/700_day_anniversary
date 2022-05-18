@@ -8,7 +8,12 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .wrap {
+  position: relative;
   width: 100vw;
   margin: 0 auto;
 }
@@ -17,7 +22,7 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 0 30px;
-  padding-top: 50px;
+  padding-top: 30vh;
 }
 .wrap .loginForm .logo {
   margin-bottom: 30px;
@@ -59,6 +64,7 @@ a {
   height: 50px;
   justify-content: center;
   flex-direction: row;
+  align-items: center;
 }
 .wrap .loginForm .boundary .boundary__bar {
   position: absolute;
@@ -72,6 +78,35 @@ a {
   z-index: 10;
   width: 50px;
   text-align: center;
+}
+.wrap .loginForm .rememberWrap p {
+  color: #00f;
+}
+.wrap .loginForm .rememberWrap p:hover {
+  cursor: pointer;
+}
+.wrap #forgetWrap {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 100px;
+  top: calc((100vh - 300px) / 2);
+  left: calc((100vw - 300px) / 2);
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 20;
+}
+.wrap #forgetWrap .forget__btn button {
+  all: unset;
+  padding: 3px 10px;
+  margin: 0 5px;
+  border-radius: 3px;
+  background-color: #0095f6;
+  color: #fff;
 }
 
 /*# sourceMappingURL=index.css.map */
