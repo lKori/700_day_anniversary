@@ -7,7 +7,7 @@ const USER_PW = "0628";
 
 function successLogin() {
   console.log("login success");
-  location.href = "./html/page01.html";
+  location.href = "./html/home.html";
 }
 
 function tryLogin() {
