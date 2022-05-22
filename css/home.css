@@ -102,6 +102,9 @@ a {
 .homeWrap .contents .post:not(:last-child) {
   margin-bottom: 25px;
 }
+.homeWrap .contents .post:last-child {
+  margin-bottom: 50px;
+}
 .homeWrap .contents .post .post__head {
   position: relative;
   display: flex;

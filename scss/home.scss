@@ -102,6 +102,10 @@
         margin-bottom: 25px;
       }
 
+      &:last-child {
+        margin-bottom: 50px;
+      }
+
       .post__head {
         position: relative;
         display: flex;
