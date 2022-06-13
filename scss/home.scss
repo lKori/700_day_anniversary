@@ -1,10 +1,13 @@
 @import "../scss/reset.scss";
 @import "../scss/common.scss";
 
+$borderColor: #333;
+
 .homeWrap {
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  background-color: rgb(250, 250, 250);
+  background-color: #000;
 
   .header {
     position: fixed;
@@ -12,16 +15,18 @@
     flex-direction: row;
     justify-content: space-between;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 45px;
     padding: 0 5px;
     align-items: center;
-    border-bottom: 1px solid #ddd;
-    background-color: #fff;
+    border-bottom: 1px solid $borderColor;
+    background-color: #000;
+    z-index: 10;
 
     & > img {
       height: 70%;
       vertical-align: middle;
+      filter: invert(96%) sepia(3%) saturate(83%) hue-rotate(200deg) brightness(120%) contrast(100%);
     }
 
     .camera {
@@ -46,12 +51,12 @@
     flex-direction: row;
     align-items: center;
     overflow-x: scroll;
-    width: 100%;
+    width: 100vw;
     margin-top: 45px;
     height: 105px;
     padding: 0 10px;
-    border-bottom: 1px solid #ddd;
-    background-color: #fff;
+    border-bottom: 1px solid $borderColor;
+    background-color: #000;
 
     &::-webkit-scrollbar {
       display: none;
@@ -73,27 +78,35 @@
         background-origin: border-box;
         background-clip: content-box, border-box;
         margin-bottom: 5px;
+
+        & > img {
+          width: 100%;
+          height: 100%;
+          border: 2px solid #000;
+          border-radius: 50%;
+        }
       }
 
       .story__profile__name {
-        width: 100%;
+        width: 100vw;
         font-size: 0.7rem;
         text-align: center;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        color: #fff;
       }
     }
   }
 
   .contents {
     .post {
-      width: 100%;
+      width: 100vw;
       height: auto;
-      background-color: #fff;
+      background-color: #000;
 
       &:not(:last-child) {
-        margin-bottom: 25px;
+        margin-bottom: 5px;
       }
 
       &:last-child {
@@ -105,10 +118,10 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        width: 100%;
+        width: 100vw;
         height: 60px;
         padding: 15px;
-        background-color: #fff;
+        background-color: #000;
 
         .post__head__img {
           width: 30px;
@@ -116,6 +129,12 @@
           background-color: #999;
           border-radius: 50%;
           margin-right: 15px;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
         }
 
         .post__head__name {
@@ -128,6 +147,7 @@
             transform: translateY(-50%);
             font-size: 0.9rem;
             font-weight: 700;
+            color: #fff;
           }
         }
 
@@ -140,9 +160,23 @@
       }
 
       .post__content {
-        width: 100%;
+        width: 100vw;
         min-height: 300px;
-        background-color: #ccc;
+        background-color: #000;
+        overflow: hidden;
+
+        .content__images {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          transition: transform 0.5s;
+
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
       }
 
       .post__footer {
@@ -150,7 +184,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        width: 100%;
+        width: 100vw;
         height: 54px;
         padding: 6px 0 8px 10px;
 
@@ -181,15 +215,20 @@
       .post__title {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 100vw;
         height: 25px;
         padding: 0 20px;
-        background-color: #fff;
+        background-color: #000;
+        color: #fff;
 
         .post__name {
           font-size: 0.9rem;
           font-weight: 700;
           margin-right: 10px;
+        }
+
+        .post__titleText {
+          font-size: 1rem;
         }
       }
     }
@@ -200,12 +239,12 @@
     bottom: 0;
     width: 100vw;
     height: 50px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
+    background-color: #000;
+    border-top: 1px solid $borderColor;
 
     .menu {
       display: flex;
-      width: 100%;
+      width: 100vw;
       height: 100%;
       flex-direction: row;
       justify-content: space-around;

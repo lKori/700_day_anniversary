@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .wrap {
+        width: 100vw;
+        margin: 0 auto;
+      }
+
+      .album {
+        width: 70vw;
+        height: 70vw;
+        overflow: hidden;
+        margin: 0 auto;
+      }
+
+      .images {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s ease;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="album">
+        <div class="images">
+          <img src="../img/post_01/image_01.jpg" />
+          <img src="../img/post_01/image_02.jpg" />
+          <img src="../img/post_01/image_03.jpg" />
+          <img src="../img/post_01/image_04.jpg" />
+          <img src="../img/post_01/image_05.jpg" />
+        </div>
+      </div>
+    </div>
+    <script src="./imageSlide.js"></script>
+  </body>
+</html>

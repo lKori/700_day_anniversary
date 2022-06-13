@@ -14,8 +14,9 @@ a {
 
 .homeWrap {
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  background-color: rgb(250, 250, 250);
+  background-color: #000;
 }
 .homeWrap .header {
   position: fixed;
@@ -23,16 +24,18 @@ a {
   flex-direction: row;
   justify-content: space-between;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 45px;
   padding: 0 5px;
   align-items: center;
-  border-bottom: 1px solid #ddd;
-  background-color: #fff;
+  border-bottom: 1px solid #333;
+  background-color: #000;
+  z-index: 10;
 }
 .homeWrap .header > img {
   height: 70%;
   vertical-align: middle;
+  filter: invert(96%) sepia(3%) saturate(83%) hue-rotate(200deg) brightness(120%) contrast(100%);
 }
 .homeWrap .header .camera {
   display: flex;
@@ -53,12 +56,12 @@ a {
   flex-direction: row;
   align-items: center;
   overflow-x: scroll;
-  width: 100%;
+  width: 100vw;
   margin-top: 45px;
   height: 105px;
   padding: 0 10px;
-  border-bottom: 1px solid #ddd;
-  background-color: #fff;
+  border-bottom: 1px solid #333;
+  background-color: #000;
 }
 .homeWrap .story::-webkit-scrollbar {
   display: none;
@@ -80,21 +83,28 @@ a {
   background-clip: content-box, border-box;
   margin-bottom: 5px;
 }
-.homeWrap .story .story__profiles .story__profile__name {
+.homeWrap .story .story__profiles .story__profile__img > img {
   width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+.homeWrap .story .story__profiles .story__profile__name {
+  width: 100vw;
   font-size: 0.7rem;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #fff;
 }
 .homeWrap .contents .post {
-  width: 100%;
+  width: 100vw;
   height: auto;
-  background-color: #fff;
+  background-color: #000;
 }
 .homeWrap .contents .post:not(:last-child) {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 .homeWrap .contents .post:last-child {
   margin-bottom: 50px;
@@ -104,10 +114,10 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   padding: 15px;
-  background-color: #fff;
+  background-color: #000;
 }
 .homeWrap .contents .post .post__head .post__head__img {
   width: 30px;
@@ -115,6 +125,11 @@ a {
   background-color: #999;
   border-radius: 50%;
   margin-right: 15px;
+}
+.homeWrap .contents .post .post__head .post__head__img > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 .homeWrap .contents .post .post__head .post__head__name {
   position: relative;
@@ -126,6 +141,7 @@ a {
   transform: translateY(-50%);
   font-size: 0.9rem;
   font-weight: 700;
+  color: #fff;
 }
 .homeWrap .contents .post .post__head .post__head__option {
   position: absolute;
@@ -134,16 +150,28 @@ a {
   right: 15px;
 }
 .homeWrap .contents .post .post__content {
-  width: 100%;
+  width: 100vw;
   min-height: 300px;
-  background-color: #ccc;
+  background-color: #000;
+  overflow: hidden;
+}
+.homeWrap .contents .post .post__content .content__images {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.5s;
+}
+.homeWrap .contents .post .post__content .content__images > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .homeWrap .contents .post .post__footer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
+  width: 100vw;
   height: 54px;
   padding: 6px 0 8px 10px;
 }
@@ -161,27 +189,31 @@ a {
 .homeWrap .contents .post .post__title {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 100vw;
   height: 25px;
   padding: 0 20px;
-  background-color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 .homeWrap .contents .post .post__title .post__name {
   font-size: 0.9rem;
   font-weight: 700;
   margin-right: 10px;
 }
+.homeWrap .contents .post .post__title .post__titleText {
+  font-size: 1rem;
+}
 .homeWrap .footer {
   position: fixed;
   bottom: 0;
   width: 100vw;
   height: 50px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
+  background-color: #000;
+  border-top: 1px solid #333;
 }
 .homeWrap .footer .menu {
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   flex-direction: row;
   justify-content: space-around;
