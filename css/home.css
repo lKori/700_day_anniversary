@@ -16,6 +16,7 @@ a {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  overflow-y: scroll;
   background-color: #000;
 }
 .homeWrap .header {
@@ -107,7 +108,7 @@ a {
   margin-bottom: 5px;
 }
 .homeWrap .contents .post:last-child {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .homeWrap .contents .post .post__head {
   position: relative;
@@ -219,7 +220,7 @@ a {
   margin-right: 10px;
 }
 .homeWrap .contents .post .post__title .post__titleText {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .homeWrap .footer {
   position: fixed;

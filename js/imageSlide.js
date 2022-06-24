@@ -1,10 +1,4 @@
-const content = document.querySelector(".post__content");
-const images = content.querySelector(".content__images");
-const imagesFooter = document.querySelector(".post__footer");
-
-const IMAGE_WIDTH = images.querySelector("img").width;
-// 이미지 가로 길이가 변하는 오류 발생, 390이랑 78 왔다갔다 함
-const IMAGE_LENGTH = images.children.length - 1;
+const content = document.querySelectorAll(".post__content");
 
 let start_x = 0;
 let current_x = 0;
@@ -12,18 +6,18 @@ let end_x = 0;
 let current = 0;
 let position = 0;
 
-function back() {
+function back(images) {
   images.style.transform = `translateX(${images.querySelector("img").width * current}px)`;
 }
 
-function prev() {
+function prev(images) {
   if (current > 0) {
     current -= 1;
     images.style.transform = `translateX(-${images.querySelector("img").width * current}px)`;
   }
 }
 
-function next() {
+function next(images, IMAGE_LENGTH) {
   if (current < IMAGE_LENGTH) {
     current += 1;
     images.style.transform = `translateX(-${images.querySelector("img").width * current}px)`;
@@ -42,26 +36,23 @@ function touch_move(event) {
   images.style.transitionDuration = "0ms";
 }
 
-function touch_end(event) {
+function touch_end(event, images, IMAGE_LENGTH) {
   end_x = event.changedTouches[0].pageX;
 
   if (start_x > end_x && Math.abs(start_x - end_x) > images.querySelector("img").width / 3) {
     console.log("next");
-    next();
+    next(images, IMAGE_LENGTH);
   } else if (start_x < end_x && Math.abs(start_x - end_x) > images.querySelector("img").width / 3) {
     console.log("prev");
-    prev();
-  } else {
-    console.log("back");
-    back();
+    prev(images);
   }
+  // else {
+  //   console.log("back");
+  //   back(images);
+  // }
 
   selectDot();
 }
-
-images.addEventListener("touchstart", touch_start);
-// images.addEventListener("touchmove", touch_move);
-images.addEventListener("touchend", touch_end);
 
 function clearDot() {
   const dots = document.querySelectorAll(".dots span");
@@ -82,7 +73,7 @@ function selectDot() {
   }
 }
 
-function createDot() {
+function createDot(IMAGE_LENGTH, imagesFooter) {
   const dotsWrap = document.createElement("div");
   dotsWrap.setAttribute("class", "dots");
 
@@ -97,4 +88,20 @@ function createDot() {
   selectDot();
 }
 
-createDot();
+content.forEach((element) => {
+  const images = element.querySelector(".content__images");
+  const imagesFooter = element.parentElement.querySelector(".post__footer");
+
+  const IMAGE_WIDTH = images.querySelector("img").width;
+  const IMAGE_LENGTH = images.children.length - 1;
+
+  // createDot(IMAGE_LENGTH, imagesFooter);
+
+  element.addEventListener("touchstart", (event) => {
+    touch_start(event);
+  });
+  // element.addEventListener("touchmove", touch_move);
+  element.addEventListener("touchend", (event) => {
+    touch_end(event, images, IMAGE_LENGTH);
+  });
+});
