@@ -38,12 +38,14 @@ $borderColor: #333;
       padding: 8px;
     }
 
-    .dm {
-      display: flex;
-      align-items: center;
-      width: 40px;
-      height: 45px;
-      padding: 8px;
+    .dmBtn {
+      a {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 45px;
+        padding: 8px;
+      }
     }
   }
 
@@ -170,6 +172,7 @@ $borderColor: #333;
           position: relative;
           display: flex;
           flex-direction: row;
+          align-items: center;
           transition: transform 0.5s;
 
           & > img {
